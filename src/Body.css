@@ -1,4 +1,5 @@
-.App__root {
+.Body__root {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 }
