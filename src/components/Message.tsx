@@ -5,7 +5,7 @@ import {ChatMessage} from "../App";
 interface MessageProps {
     message: ChatMessage;
     onDeleteClick: (messageId: string) => void;
-    onEditClick: () => void;
+    onEditClick: (messageId: string, newText: string) => void;
 }
 
 interface MessageState {
@@ -16,8 +16,17 @@ export class Message extends React.Component<MessageProps, MessageState> {
         super(props);
     }
 
-    handleEditClick = () => {
+    handleEditClick = (id: string, oldText: string) => {
+        const newText = prompt("Your new message:", oldText);
+        if (newText !== null && newText.length > 0) {
+            this.props.onEditClick(id, newText);
+        }
+    }
 
+    handleDeleteClick = (id: string) => {
+        if (confirm("Are you sure you want to delete this item?")) {
+            this.props.onDeleteClick(id);
+        }
     }
 
     getFormattedDateText(date: Date) {
@@ -32,16 +41,19 @@ export class Message extends React.Component<MessageProps, MessageState> {
         return (
             <div className={"Message__root"}>
                 <div className={"Message__body"}>
-
                     <div className={"Message__initials"}>{this.props.message.createdBy}</div>
-
                     <div className={"Message__messageContainer"}>
                         <div className={"Message__triangle"}/>
                         <div className={"Message__content"}>
                             <div className={"Message__text"}>{this.props.message.text}</div>
-                            <div className={"Message__editIcon"} onClick={this.handleEditClick}/>
-                            <div className={"Message__XIcon"}
-                                 onClick={() => this.props.onDeleteClick(this.props.message.id)}/>
+                            <div
+                                className={"Message__editIcon"}
+                                onClick={() => this.handleEditClick(this.props.message.id, this.props.message.text)}
+                            />
+                            <div
+                                className={"Message__XIcon"}
+                                onClick={() => this.handleDeleteClick(this.props.message.id)}
+                            />
                         </div>
                     </div>
                 </div>

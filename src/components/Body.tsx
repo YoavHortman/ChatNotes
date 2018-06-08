@@ -6,7 +6,7 @@ import {Message} from "./Message";
 interface BodyProps {
     messages: ChatMessage[];
     onDeleteClick: (messageId: string) => void;
-    onEditClick: () => void;
+    onEditClick: (messageId: string, newText: string) => void;
 }
 
 interface BodyState {
@@ -15,10 +15,6 @@ interface BodyState {
 export class Body extends React.Component<BodyProps, BodyState> {
     constructor(props: BodyProps) {
         super(props);
-    }
-
-    handleEditClick = () => {
-
     }
 
     render() {
