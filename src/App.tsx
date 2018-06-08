@@ -1,8 +1,8 @@
 import * as React from 'react';
 import './App.css';
-import {Header} from "./Header";
-import {Body} from "./Body";
-import {Footer} from "./Footer";
+import {Header} from "./components/Header";
+import {Body} from "./components/Body";
+import {Footer} from "./components/Footer";
 
 export interface ChatMessage {
     id: number
@@ -22,7 +22,7 @@ class App extends React.Component<{}, AppState> {
             messages: null
         }
 
-        this.loadMessages()
+        this.loadMessages();
     }
 
     async loadMessages() {
