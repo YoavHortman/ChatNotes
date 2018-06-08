@@ -1,0 +1,75 @@
+.Message__root {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    margin: 5px;
+    flex: 0 0 auto;
+}
+
+.Message__body {
+    display: flex;
+    flex-direction: row;
+}
+
+.Message__initials {
+    border-radius: 50%;
+    background: lightblue;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+.Message__messageContainer {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    margin-left: 5px;
+}
+
+
+.Message__triangle {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 15px solid lightgray;
+    border-bottom: 10px solid transparent;
+}
+
+.Message__content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: lightgray;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.Message__text {
+    flex: 1 1 auto;
+}
+
+.Message__editIcon {
+    background: url("../assets/EditIcon.png");
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.Message__XIcon {
+    background: url("../assets/XIcon.png");
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+}
+
+.Message__footer {
+    text-align: right;
+    font-size: 13px;
+    color: gray;
+}
