@@ -5,8 +5,7 @@
 }
 
 .Footer__input {
-    border-radius: 10px;
-    border: 2px solid black;
+    border: 1px solid #d3d3d361;
     padding: 10px;
     margin: 10px;
     font-size: 18px;
