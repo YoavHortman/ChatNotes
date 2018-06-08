@@ -8,24 +8,30 @@ interface FooterProps {
 
 interface FooterState {
     text: string | undefined;
+    errMessage: string | null;
 }
 
 export class Footer extends React.Component<FooterProps, FooterState> {
     constructor(props: FooterProps) {
         super(props);
         this.state = {
-            text: undefined
+            text: undefined,
+            errMessage: null
         }
     }
 
     handleTextChange(newVal: string) {
-        this.setState({text: newVal});
+        this.setState({text: newVal, errMessage: null});
     }
 
     handleKeyPress(key: string) {
         if (key === "Enter") {
             if (this.state.text !== undefined && this.state.text.length > 0) {
                 this.props.onCreateMessage(this.state.text);
+                this.setState({text: undefined})
+            } else {
+                console.log("no input");
+                this.setState({errMessage: "No input.."})
             }
         }
     }
@@ -42,6 +48,12 @@ export class Footer extends React.Component<FooterProps, FooterState> {
                     placeholder={"Enter your message..."}
                     className={"Footer__input"}
                 />
+                {this.state.errMessage === null ? null :
+                    <div className={"Footer_err"}>
+                        {this.state.errMessage}
+                    </div>
+                }
+
             </div>
         );
     }
