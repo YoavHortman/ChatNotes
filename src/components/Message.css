@@ -35,7 +35,7 @@
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
-    border-right: 15px solid lightgray;
+    border-right: 15px solid #d3d3d361;
     border-bottom: 10px solid transparent;
 }
 
@@ -44,7 +44,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background: lightgray;
+    background: #d3d3d361;
     border-radius: 10px;
     padding: 5px;
 }
