@@ -1,4 +1,10 @@
 .App__root {
     display: flex;
     flex-direction: column;
+    height: 500px;
+    justify-content: center;
+    align-items: stretch;
+    padding: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 100px;
 }
