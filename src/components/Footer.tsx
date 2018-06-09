@@ -52,7 +52,6 @@ export class Footer extends React.Component<FooterProps, FooterState> {
                         {this.state.errMessage}
                     </div>
                 }
-
             </div>
         );
     }

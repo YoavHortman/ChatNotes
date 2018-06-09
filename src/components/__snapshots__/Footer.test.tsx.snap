@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render 1`] = `
+<div
+  className="Footer__root"
+>
+  <input
+    className="Footer__input"
+    onChange={[Function]}
+    onKeyPress={[Function]}
+    placeholder="Enter your message..."
+    type="text"
+    value=""
+  />
+</div>
+`;
