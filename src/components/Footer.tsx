@@ -30,7 +30,6 @@ export class Footer extends React.Component<FooterProps, FooterState> {
                 this.props.onCreateMessage(this.state.text);
                 this.setState({text: null})
             } else {
-                console.log("no input");
                 this.setState({errMessage: "No input.."})
             }
         }
