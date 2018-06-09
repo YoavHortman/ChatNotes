@@ -17,9 +17,29 @@ export class Body extends React.Component<BodyProps, BodyState> {
         super(props);
     }
 
+    componentDidMount() {
+        this.scrollBottom();
+    }
+
+    componentDidUpdate(prevProps: BodyProps) {
+        if (this.props.messages.length > prevProps.messages.length)
+        this.scrollBottom();
+    }
+
+    scrollBottom() {
+        if (this.body !== null) {
+            this.body.scrollTop = this.body.scrollHeight;
+        }
+    }
+
+    private body: HTMLElement | null;
+
     render() {
         return (
-            <div className={"Body__root"}>
+            <div
+                className={"Body__root"}
+                ref={(e) => this.body = e}
+            >
                 {this.props.messages.sort((message1, message2) => {
                     return message1.createdAt.getTime() - message2.createdAt.getTime();
                 }).map(message => {
