@@ -6,8 +6,6 @@ import {Mutation} from "react-apollo";
 
 interface MessageProps {
     message: ChatMessage;
-    onDeleteClick: (messageId: string) => void;
-    onEditClick: (messageId: string, newText: string) => void;
 }
 
 interface MessageState {

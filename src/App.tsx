@@ -21,104 +21,9 @@ export interface ChatMessage {
     createdBy: string
 }
 
-interface AppState {
-    messages: ChatMessage[] | "LOADING";
-}
-
-class App extends React.Component<{}, AppState> {
+class App extends React.Component {
     constructor(props: {}) {
         super(props);
-
-        this.state = {
-            messages: "LOADING"
-        };
-
-        this.loadMessages();
-    }
-
-    async loadMessages() {
-        const dummyData: ChatMessage[] = [
-            {
-                id: "1",
-                createdAt: new Date(),
-                text: "Hello",
-                createdBy: "YH"
-            },
-            {
-                id: "2",
-                createdAt: new Date(),
-                text: "Hello2",
-                createdBy: "YH"
-            }, {
-                id: "1",
-                createdAt: new Date(),
-                text: "Hello",
-                createdBy: "YH"
-            },
-            {
-                id: "2",
-                createdAt: new Date(),
-                text: "Hello2",
-                createdBy: "YH"
-            }, {
-                id: "1",
-                createdAt: new Date(),
-                text: "Hello",
-                createdBy: "YH"
-            },
-            {
-                id: "2",
-                createdAt: new Date(),
-                text: "Hello2",
-                createdBy: "YH"
-            }, {
-                id: "1",
-                createdAt: new Date(),
-                text: "Hello",
-                createdBy: "YH"
-            },
-            {
-                id: "2",
-                createdAt: new Date(),
-                text: "Hello2",
-                createdBy: "YH"
-            }, {
-                id: "1",
-                createdAt: new Date(),
-                text: "Hello",
-                createdBy: "YH"
-            },
-            {
-                id: "2",
-                createdAt: new Date(),
-                text: "Hello2",
-                createdBy: "YH"
-            }, {
-                id: "1",
-                createdAt: new Date(),
-                text: "Hello",
-                createdBy: "YH"
-            },
-            {
-                id: "2",
-                createdAt: new Date(),
-                text: "Hello2",
-                createdBy: "YH"
-            }];
-        setTimeout(() => {
-            this.setState({messages: dummyData})
-        }, 100);
-    }
-
-    onCreateMessage = (newText: string) => {
-
-    }
-
-    onEditMessage(messageId: number, newText: string) {
-
-    }
-
-    onDeleteMessage(messageId: number) {
 
     }
 
@@ -132,11 +37,6 @@ class App extends React.Component<{}, AppState> {
     }
 
     public render() {
-        // if (this.state.messages === "LOADING") {
-        //     // TODO prolly should use better UI
-        //     return <div>Loading...</div>
-        // }
-
         return (
             <ApolloProvider client={client}>
                 <Query
@@ -154,12 +54,7 @@ class App extends React.Component<{}, AppState> {
                         return (
                             <div className={"App__root"}>
                             <Header noteCount={parsedData.length}/>
-                            <Body
-                                onDeleteClick={() => {
-                                }}
-                                onEditClick={() => {
-                                }}
-                                messages={parsedData}/>
+                            <Body messages={parsedData}/>
                             <FooterWrapper />
                         </div>
                         );

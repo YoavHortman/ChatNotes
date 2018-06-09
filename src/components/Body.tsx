@@ -5,8 +5,6 @@ import {Message} from "./Message";
 
 interface BodyProps {
     messages: ChatMessage[];
-    onDeleteClick: (messageId: string) => void;
-    onEditClick: (messageId: string, newText: string) => void;
 }
 
 interface BodyState {
@@ -48,8 +46,6 @@ export class Body extends React.Component<BodyProps, BodyState> {
                         return (
                             <Message
                                 message={message}
-                                onDeleteClick={this.props.onDeleteClick}
-                                onEditClick={this.props.onEditClick}
                                 key={message.id}
                             />
                         );
