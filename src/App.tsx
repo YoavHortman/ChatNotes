@@ -1,11 +1,5 @@
 import * as React from 'react';
 import './App.css';
-// import {Header} from "./components/Header";
-//
-// import {Body} from "./components/Body";
-//
-// import {Footer} from "./components/Footer";
-
 import {ApolloProvider, Query} from "react-apollo";
 import {client} from "./ApolloClient";
 import {Body} from "./components/Body";
@@ -30,7 +24,12 @@ class App extends React.Component {
     parseData(data: any): ChatMessage[] {
         const toReturn: ChatMessage[] = [];
         for (const datum of data) {
-            toReturn.push({ text: datum.text, id: datum.id, createdAt: new Date(datum.createdAt), createdBy: datum.createdBy})
+            toReturn.push({
+                text: datum.text,
+                id: datum.id,
+                createdAt: new Date(datum.createdAt),
+                createdBy: datum.createdBy
+            })
         }
 
         return toReturn;
@@ -53,10 +52,10 @@ class App extends React.Component {
                         const parsedData = this.parseData(data.allMessages);
                         return (
                             <div className={"App__root"}>
-                            <Header noteCount={parsedData.length}/>
-                            <Body messages={parsedData}/>
-                            <FooterWrapper />
-                        </div>
+                                <Header noteCount={parsedData.length}/>
+                                <Body messages={parsedData}/>
+                                <FooterWrapper/>
+                            </div>
                         );
                     }}
                 </Query>
