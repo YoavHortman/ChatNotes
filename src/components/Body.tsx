@@ -23,7 +23,7 @@ export class Body extends React.Component<BodyProps, BodyState> {
 
     componentDidUpdate(prevProps: BodyProps) {
         if (this.props.messages.length > prevProps.messages.length)
-        this.scrollBottom();
+            this.scrollBottom();
     }
 
     scrollBottom() {
@@ -40,18 +40,21 @@ export class Body extends React.Component<BodyProps, BodyState> {
                 className={"Body__root"}
                 ref={(e) => this.body = e}
             >
-                {this.props.messages.sort((message1, message2) => {
-                    return message1.createdAt.getTime() - message2.createdAt.getTime();
-                }).map(message => {
-                    return (
-                        <Message
-                            message={message}
-                            onDeleteClick={this.props.onDeleteClick}
-                            onEditClick={this.props.onEditClick}
-                            key={message.id}
-                        />
-                    );
-                })}
+                {/*This div makes it so the order is not flipped (cause of column-reverse in the CSS)*/}
+                <div>
+                    {this.props.messages.sort((message1, message2) => {
+                        return message1.createdAt.getTime() - message2.createdAt.getTime();
+                    }).map(message => {
+                        return (
+                            <Message
+                                message={message}
+                                onDeleteClick={this.props.onDeleteClick}
+                                onEditClick={this.props.onEditClick}
+                                key={message.id}
+                            />
+                        );
+                    })}
+                </div>
             </div>
         );
     }

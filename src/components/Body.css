@@ -1,7 +1,8 @@
 .Body__root {
     display: flex;
-    flex-direction: column;
+    /* We use column reverse since flex-end removes the scrollbar -- see link*/
+    /*https://github.com/philipwalton/flexbugs/issues/53*/
+    flex-direction: column-reverse;
     overflow-y: scroll;
     flex: 1 1 auto;
-    justify-content: flex-end;
 }
