@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render message 1`] = `
+<div
+  className="Message__root"
+>
+  <div
+    className="Message__body"
+  >
+    <div
+      className="Message__initials"
+    >
+      YH
+    </div>
+    <div
+      className="Message__messageContainer"
+    >
+      <div
+        className="Message__triangle"
+      />
+      <div
+        className="Message__content"
+      >
+        <div
+          className="Message__text"
+        >
+          Hello!
+        </div>
+        <div
+          className="Message__editIcon"
+          onClick={[Function]}
+        />
+        <div
+          className="Message__XIcon"
+          onClick={[Function]}
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    className="Message__footer"
+  >
+    25/12/2012
+     
+    5:53
+  </div>
+</div>
+`;

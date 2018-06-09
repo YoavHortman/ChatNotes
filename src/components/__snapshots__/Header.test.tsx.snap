@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render correctly with the text "1 item" 1`] = `
+<div
+  className="Header__root"
+>
+  1
+   
+  item
+</div>
+`;
+
+exports[`Should render correctly with the text "2 items" 1`] = `
+<div
+  className="Header__root"
+>
+  2
+   
+  items
+</div>
+`;
