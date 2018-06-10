@@ -27,13 +27,17 @@ exports[`Should render message 1`] = `
           Hello!
         </div>
         <div
-          className="Message__editIcon"
-          onClick={[Function]}
-        />
-        <div
-          className="Message__XIcon"
-          onClick={[Function]}
-        />
+          className="Message__iconContainer"
+        >
+          <div
+            className="Message__editIcon"
+            onClick={[Function]}
+          />
+          <div
+            className="Message__XIcon"
+            onClick={[Function]}
+          />
+        </div>
       </div>
     </div>
   </div>

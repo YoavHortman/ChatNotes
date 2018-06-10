@@ -39,13 +39,17 @@ exports[`Should render the entire list 1`] = `
               Hello!
             </div>
             <div
-              className="Message__editIcon"
-              onClick={[Function]}
-            />
-            <div
-              className="Message__XIcon"
-              onClick={[Function]}
-            />
+              className="Message__iconContainer"
+            >
+              <div
+                className="Message__editIcon"
+                onClick={[Function]}
+              />
+              <div
+                className="Message__XIcon"
+                onClick={[Function]}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -83,13 +87,17 @@ exports[`Should render the entire list 1`] = `
               Test!
             </div>
             <div
-              className="Message__editIcon"
-              onClick={[Function]}
-            />
-            <div
-              className="Message__XIcon"
-              onClick={[Function]}
-            />
+              className="Message__iconContainer"
+            >
+              <div
+                className="Message__editIcon"
+                onClick={[Function]}
+              />
+              <div
+                className="Message__XIcon"
+                onClick={[Function]}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -127,13 +135,17 @@ exports[`Should render the entire list 1`] = `
               Test1!
             </div>
             <div
-              className="Message__editIcon"
-              onClick={[Function]}
-            />
-            <div
-              className="Message__XIcon"
-              onClick={[Function]}
-            />
+              className="Message__iconContainer"
+            >
+              <div
+                className="Message__editIcon"
+                onClick={[Function]}
+              />
+              <div
+                className="Message__XIcon"
+                onClick={[Function]}
+              />
+            </div>
           </div>
         </div>
       </div>
