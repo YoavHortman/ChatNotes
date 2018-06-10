@@ -14,24 +14,22 @@
 .Message__initials {
     border-radius: 50%;
     background: lightblue;
-    width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    flex: 0 0 40px;
 }
-
 
 .Message__messageContainer {
     display: flex;
-    align-items: center;
     flex: 1 1 auto;
     margin-left: 5px;
 }
 
-
 .Message__triangle {
+    margin-top: 10px;
     width: 0;
     height: 0;
     border-top: 10px solid transparent;
@@ -51,11 +49,18 @@
 
 .Message__text {
     flex: 1 1 auto;
+    padding: 5px;
+}
+
+.Message__iconContainer {
+    display: flex;
+    flex-direction: row;
 }
 
 .Message__editIcon {
     background: url("../assets/EditIcon.png");
     background-size: contain;
+    background-repeat: no-repeat;
     width: 30px;
     height: 30px;
     margin-right: 10px;
@@ -64,6 +69,7 @@
 .Message__XIcon {
     background: url("../assets/XIcon.png");
     background-size: contain;
+    background-repeat: no-repeat;
     width: 30px;
     height: 30px;
 }

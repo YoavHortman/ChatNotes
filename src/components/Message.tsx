@@ -50,8 +50,10 @@ export class Message extends React.Component<MessageProps, MessageState> {
                         <div className={"Message__triangle"}/>
                         <div className={"Message__content"}>
                             <div className={"Message__text"}>{this.props.message.text}</div>
-                            {this.renderEditIcon()}
-                            {this.renderXIcon()}
+                            <div className={"Message__iconContainer"}>
+                                {this.renderEditIcon()}
+                                {this.renderXIcon()}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -79,15 +81,15 @@ export class Message extends React.Component<MessageProps, MessageState> {
         return (
             <Mutation
                 mutation={DELETE_MESSAGE}
-                update={(cache, { data: { deleteMessage } }) => {
-                    const allMessages = cache.readQuery({ query: GET_ALL_MESSAGES });
+                update={(cache, {data: {deleteMessage}}) => {
+                    const allMessages = cache.readQuery({query: GET_ALL_MESSAGES});
                     if (allMessages === null) {
                         // This is here to make typescript happy (:
                         throw new Error("Should never happen");
                     }
                     cache.writeQuery({
                         query: GET_ALL_MESSAGES,
-                        data: { allMessages: (allMessages as any).allMessages.filter((m: ChatMessage) => m.id !== deleteMessage.id) }
+                        data: {allMessages: (allMessages as any).allMessages.filter((m: ChatMessage) => m.id !== deleteMessage.id)}
                     });
                 }}
             >
