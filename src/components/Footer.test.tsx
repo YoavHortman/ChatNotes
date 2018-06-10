@@ -1,11 +1,11 @@
 import * as React from "react";
-import * as renderer from "react-test-renderer";
 import {Footer} from "./Footer";
+import {shallow} from "enzyme";
 
 it('Should render', () => {
-    const tree = renderer
-        .create(<Footer onCreateMessage={() => {
-        }}/>).toJSON();
+    Enzyme.configure()
+    const component = shallow(<Footer onCreateMessage={() => {}}/>);
+    component.find('input').simulate('keypress', {key: 'Enter'});
 
-    expect(tree).toMatchSnapshot();
+    expect(JSON.stringify(component)).toMatchSnapshot();
 });
