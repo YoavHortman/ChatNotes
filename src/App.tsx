@@ -52,9 +52,11 @@ class App extends React.Component {
                         const parsedData = this.parseData(data.allMessages);
                         return (
                             <div className={"App__root"}>
-                                <Header noteCount={parsedData.length}/>
-                                <Body messages={parsedData}/>
-                                <FooterWrapper/>
+                                <div className={"App__card"}>
+                                    <Header noteCount={parsedData.length}/>
+                                    <Body messages={parsedData}/>
+                                    <FooterWrapper/>
+                                </div>
                             </div>
                         );
                     }}
